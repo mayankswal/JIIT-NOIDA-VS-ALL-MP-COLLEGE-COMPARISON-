@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MP Engineering Colleges — Brutally Honest CSE/AIML Comparison 2025–26</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --surface2: #16161f;
+    --border: #252535;
+    --accent: #e8ff4a;
+    --accent2: #4affb4;
+    --accent3: #ff4a6e;
+    --accent4: #4a9eff;
+    --text: #e8e8f0;
+    --muted: #7070a0;
+    --tier1: #e8ff4a;
+    --tier2: #4affb4;
+    --tier3: #4a9eff;
+    --tier4: #ff9f4a;
+    --tier5: #ff4a6e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, #0a0a0f 0%, #13131f 50%, #0a0a0f 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 3rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(232,255,74,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .header-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .header-tag::before {
+    content: '▶';
+    font-size: 0.6rem;
+  }
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+  h1 span { color: var(--accent); }
+  .header-sub {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-top: 0.75rem;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .disclaimer {
+    background: rgba(255,74,110,0.1);
+    border: 1px solid rgba(255,74,110,0.3);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.82rem;
+    color: #ff8fa8;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 2rem;
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  nav a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* LAYOUT */
+  main { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+
+  section { margin-bottom: 4rem; }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.75rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  h2 .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    background: var(--surface2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 1.5rem 0 0.75rem;
+    color: var(--accent2);
+  }
+
+  p { color: #c0c0d8; font-size: 0.92rem; margin-bottom: 0.75rem; line-height: 1.7; }
+
+  /* TABLES */
+  .table-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: 8px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  thead tr { background: var(--surface2); }
+  th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid rgba(37,37,53,0.5);
+    vertical-align: middle;
+    color: var(--text);
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* BADGES */
+  .badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .tier-1 { background: rgba(232,255,74,0.15); color: var(--tier1); border: 1px solid rgba(232,255,74,0.3); }
+  .tier-2 { background: rgba(74,255,180,0.12); color: var(--tier2); border: 1px solid rgba(74,255,180,0.25); }
+  .tier-3 { background: rgba(74,158,255,0.12); color: var(--tier3); border: 1px solid rgba(74,158,255,0.25); }
+  .tier-4 { background: rgba(255,159,74,0.12); color: var(--tier4); border: 1px solid rgba(255,159,74,0.25); }
+  .tier-5 { background: rgba(255,74,110,0.12); color: var(--tier5); border: 1px solid rgba(255,74,110,0.25); }
+  .badge.up { background: rgba(74,255,180,0.1); color: var(--accent2); }
+  .badge.down { background: rgba(255,74,110,0.1); color: var(--accent3); }
+  .badge.warn { background: rgba(255,159,74,0.1); color: var(--tier4); }
+  .badge.ok { background: rgba(74,158,255,0.1); color: var(--accent4); }
+  .badge.govt { background: rgba(74,158,255,0.1); color: #80c0ff; }
+  .badge.pvt { background: rgba(232,255,74,0.08); color: #c8e044; }
+  .badge.iiit { background: rgba(180,74,255,0.1); color: #c080ff; }
+
+  /* SCORE BARS */
+  .score-bar { display: flex; align-items: center; gap: 0.5rem; }
+  .bar-track { height: 6px; background: var(--border); border-radius: 3px; flex: 1; min-width: 60px; }
+  .bar-fill { height: 100%; border-radius: 3px; }
+  .bar-val { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--muted); width: 2rem; text-align: right; }
+
+  /* CARDS */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: rgba(232,255,74,0.3); }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+  }
+  .card-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .card-rank {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .card-stat { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.25rem; }
+  .card-stat span { color: var(--text); font-weight: 500; }
+  .card-verdict {
+    margin-top: 0.75rem;
+    font-size: 0.77rem;
+    color: #a0a0c0;
+    border-top: 1px solid var(--border);
+    padding-top: 0.75rem;
+    line-height: 1.5;
+  }
+
+  /* VERDICTS */
+  .verdict-box {
+    background: var(--surface);
+    border-left: 4px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .verdict-box.warn { border-color: var(--accent3); }
+  .verdict-box.info { border-color: var(--accent4); }
+  .verdict-box.ok { border-color: var(--accent2); }
+  .verdict-box strong { font-family: 'Syne', sans-serif; font-size: 0.9rem; display: block; margin-bottom: 0.5rem; }
+
+  /* RANKING TABLES */
+  .rank-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    width: 2rem;
+    text-align: center;
+  }
+  .rank-1 .rank-num { color: #FFD700; }
+  .rank-2 .rank-num { color: #C0C0C0; }
+  .rank-3 .rank-num { color: #cd7f32; }
+
+  /* COLLEGE PROFILES */
+  .profile-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .profile-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+  .profile-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+    background: var(--surface2);
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  .stat-item { }
+  .stat-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .stat-value { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-top: 0.15rem; }
+  .stat-value.green { color: var(--accent2); }
+  .stat-value.yellow { color: var(--accent); }
+  .stat-value.red { color: var(--accent3); }
+  .stat-value.blue { color: var(--accent4); }
+
+  .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+  .pros, .cons { font-size: 0.8rem; }
+  .pros strong { color: var(--accent2); font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem; }
+  .cons strong { color: var(--accent3); font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem; }
+  .pros li, .cons li { color: #a8a8c8; margin-bottom: 0.3rem; list-style: none; padding-left: 1rem; position: relative; font-size: 0.79rem; line-height: 1.4; }
+  .pros li::before { content: '+'; color: var(--accent2); position: absolute; left: 0; font-weight: 700; }
+  .cons li::before { content: '−'; color: var(--accent3); position: absolute; left: 0; font-weight: 700; }
+
+  /* FINAL VERDICT */
+  .final-verdict {
+    background: linear-gradient(135deg, rgba(232,255,74,0.05) 0%, rgba(74,255,180,0.03) 100%);
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  .final-verdict h2 { color: var(--accent); border: none; padding: 0; margin-bottom: 1.5rem; }
+
+  /* QA Section */
+  .qa-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .qa-q {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .qa-q::before { content: 'Q.'; color: var(--muted); }
+  .qa-a { font-size: 0.85rem; color: #c0c0d8; line-height: 1.6; }
+
+  /* FOOTER */
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-top: 4rem;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  @media (max-width: 700px) {
+    main { padding: 1rem; }
+    .pros-cons { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .card-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-tag">Brutally Honest · Data-Driven · 2025–26 Realistic Trends</div>
+  <h1>MP Engineering Colleges<br><span>CSE / AIML Comparison</span></h1>
+  <p style="color:#a0a0c0;margin-top:0.75rem;font-size:0.9rem;">IITs · IIITs · NITs · Government · Private + JIIT Noida — Complete Comparison</p>
+  <div class="header-sub">34 colleges · 25+ parameters · Median-first approach · No promotional content</div>
+  <div class="disclaimer">
+    ⚠ Data sourced from NIRF 2025, official placement reports, Careers360, Shiksha, CollegeDunia, and community discussions (Reddit/Quora). "Average" figures from colleges are mean CTC of placed students only — not of the entire batch. Median is a better indicator. All 2025 data refers to the batch graduating in 2025.
+  </div>
+</header>
+
+<nav>
+  <a href="#tier-summary">Tier Summary</a>
+  <a href="#profiles">College Profiles</a>
+  <a href="#mega-table">Mega Compare</a>
+  <a href="#rankings">All Rankings</a>
+  <a href="#analysis">Deep Analysis</a>
+  <a href="#qa">Q&A</a>
+  <a href="#verdict">Final Verdict</a>
+</nav>
+
+<main>
+
+<!-- TIER SUMMARY -->
+<section id="tier-summary">
+  <h2><span class="num">01</span> College Tier Overview — CSE/AIML 2025</h2>
+  <div class="verdict-box info">
+    <strong>How to Read This</strong>
+    Tiers are based on realistic CSE/AIML placement outcomes, peer quality, and brand value combined — NOT just highest package claims. A college claiming "1 Crore package" with a 3 LPA median is tier-5, not tier-1.
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th>Tier</th><th>College</th><th>Type</th><th>CSE Avg Pkg (2025)</th><th>CSE Median Pkg</th><th>CSE Highest</th><th>Placement %</th><th>Overall Grade</th>
+      </tr></thead>
+      <tbody>
+        <tr class="rank-1">
+          <td><span class="badge tier-1">TIER 1</span></td>
+          <td class="profile-name">IIT Indore</td>
+          <td><span class="badge govt">Govt/IIT</span></td>
+          <td class="stat-value green">₹47 LPA*</td>
+          <td class="stat-value">₹28–30 LPA</td>
+          <td>₹137 LPA (Domestic)</td>
+          <td><span class="badge up">96%</span></td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-2">TIER 2A</span></td>
+          <td class="profile-name">MANIT Bhopal (NIT)</td>
+          <td><span class="badge govt">Govt/NIT</span></td>
+          <td>₹17–25 LPA</td>
+          <td>₹12–15 LPA</td>
+          <td>₹82–85 LPA (Dom)</td>
+          <td><span class="badge up">90–95%</span></td>
+          <td>⭐⭐⭐⭐½</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-2">TIER 2A</span></td>
+          <td class="profile-name">IIIT Bhopal</td>
+          <td><span class="badge iiit">Govt/IIIT</span></td>
+          <td>₹19–20 LPA</td>
+          <td>₹13–15 LPA</td>
+          <td>₹85 LPA (Dom)</td>
+          <td><span class="badge ok">85%</span></td>
+          <td>⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-2">TIER 2B</span></td>
+          <td class="profile-name">IET DAVV Indore</td>
+          <td><span class="badge govt">Govt/State</span></td>
+          <td>₹8–12 LPA</td>
+          <td>₹6–8 LPA</td>
+          <td>₹57–70 LPA</td>
+          <td><span class="badge up">85–90%</span></td>
+          <td>⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-2">TIER 2B</span></td>
+          <td class="profile-name">SGSITS Indore</td>
+          <td><span class="badge govt">Govt/State</span></td>
+          <td>₹8–10 LPA</td>
+          <td>₹6–8 LPA</td>
+          <td>₹43 LPA</td>
+          <td><span class="badge ok">75–85%</span></td>
+          <td>⭐⭐⭐½</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-3">TIER 3A</span></td>
+          <td class="profile-name">JIIT Noida</td>
+          <td><span class="badge pvt">Private</span></td>
+          <td>₹11.13 LPA</td>
+          <td>₹7.93 LPA</td>
+          <td>₹62 LPA (Dom)</td>
+          <td><span class="badge up">90–95%</span></td>
+          <td>⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-3">TIER 3A</span></td>
+          <td class="profile-name">JEC Jabalpur</td>
+          <td><span class="badge govt">Govt/State</span></td>
+          <td>₹5–8 LPA</td>
+          <td>₹5–6 LPA</td>
+          <td>₹20–25 LPA</td>
+          <td><span class="badge ok">70–80%</span></td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-3">TIER 3A</span></td>
+          <td class="profile-name">UIT RGPV Bhopal</td>
+          <td><span class="badge govt">Govt/State</span></td>
+          <td>₹4–7 LPA</td>
+          <td>₹5–7 LPA (NIRF)</td>
+          <td>₹54 LPA (few)</td>
+          <td><span class="badge ok">60–70%</span></td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-3">TIER 3B</span></td>
+          <td class="profile-name">VIT Bhopal</td>
+          <td><span class="badge pvt">Private</span></td>
+          <td>₹9–11 LPA</td>
+          <td>₹5–6 LPA</td>
+          <td>₹70–88 LPA*</td>
+          <td><span class="badge ok">85–90%</span></td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-3">TIER 3B</span></td>
+          <td class="profile-name">MITS Gwalior</td>
+          <td><span class="badge govt">Govt/Aided</span></td>
+          <td>₹4–7 LPA</td>
+          <td>₹4–5 LPA</td>
+          <td>₹15–20 LPA</td>
+          <td><span class="badge ok">60–70%</span></td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-4">TIER 4A</span></td>
+          <td class="profile-name">LNCT Bhopal</td>
+          <td><span class="badge pvt">Private</span></td>
+          <td>₹5–6 LPA</td>
+          <td>₹3.78–5.5 LPA</td>
+          <td>₹45 LPA (rare)</td>
+          <td><span class="badge ok">70–80%</span></td>
+          <td>⭐⭐½</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-4">TIER 4A</span></td>
+          <td class="profile-name">Acropolis Institute</td>
+          <td><span class="badge pvt">Private</span></td>
+          <td>₹4–7 LPA</td>
+          <td>₹4–5 LPA</td>
+          <td>₹18–25 LPA</td>
+          <td><span class="badge ok">65–75%</span></td>
+          <td>⭐⭐½</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-4">TIER 4A</span></td>
+          <td class="profile-name">Medicaps University</td>
+          <td><span class="badge pvt">Private</span></td>
+          <td>₹6.5 LPA</td>
+          <td>₹4–4.25 LPA</td>
+          <td>₹52 LPA (rare)</td>
+          <td><span class="badge ok">70–80%</span></td>
+          <td>⭐⭐½</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-4">TIER 4A</span></td>
+          <td class="profile-name">SISTec (all camps)</td>
+          <td><span class="badge pvt">Private</span></td>
+          <td>₹4–6 LPA</td>
+          <td>₹3.5–4.5 LPA</td>
+          <td>₹15–22 LPA</td>
+          <td><span class="badge ok">60–70%</span></td>
+          <td>⭐⭐½</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-4">TIER 4B</span></td>
+          <td class="profile-name">IPS Academy</td>
+          <td><span class="badge pvt">Private</span></td>
+          <td>₹4–6 LPA</td>
+          <td>₹3–4 LPA</td>
+          <td>₹12–18 LPA</td>
+          <td><span class="badge warn">55–65%</span></td>
+          <td>⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-4">TIER 4B</span></td>
+          <td class="profile-name">Prestige Institute</td>
+          <td><span class="badge pvt">Private</span></td>
+          <td>₹4–6 LPA</td>
+          <td>₹3–4 LPA</td>
+          <td>₹15 LPA</td>
+          <td><span class="badge warn">55–65%</span></td>
+          <td>⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-4">TIER 4B</span></td>
+          <td class="profile-name">SAGE University</td>
+          <td><span class="badge pvt">Private</span></td>
+          <td>₹3.5–5.5 LPA</td>
+          <td>₹3–4 LPA</td>
+          <td>₹12 LPA</td>
+          <td><span class="badge warn">50–60%</span></td>
+          <td>⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-4">TIER 4B</span></td>
+          <td class="profile-name">Oriental Bhopal</td>
+          <td><span class="badge pvt">Private</span></td>
+          <td>₹3.5–5 LPA</td>
+          <td>₹3–4 LPA</td>
+          <td>₹12 LPA</td>
+          <td><span class="badge warn">50–60%</span></td>
+          <td>⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-4">TIER 4B</span></td>
+          <td class="profile-name">Technocrats Institute</td>
+          <td><span class="badge pvt">Private</span></td>
+          <td>₹3–5 LPA</td>
+          <td>₹3–3.5 LPA</td>
+          <td>₹10–14 LPA</td>
+          <td><span class="badge warn">50–60%</span></td>
+          <td>⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-5">TIER 5</span></td>
+          <td class="profile-name">Bansal / RKDF / Truba / Patel</td>
+          <td><span class="badge pvt">Private</span></td>
+          <td>₹2.5–4 LPA</td>
+          <td>₹2.5–3 LPA</td>
+          <td>₹8–12 LPA (claimed)</td>
+          <td><span class="badge down">40–55%</span></td>
+          <td>⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-4">TIER 4B</span></td>
+          <td class="profile-name">SATI Vidisha</td>
+          <td><span class="badge govt">Govt/Aided</span></td>
+          <td>₹3–5 LPA</td>
+          <td>₹3–4 LPA</td>
+          <td>₹10–15 LPA</td>
+          <td><span class="badge warn">50–65%</span></td>
+          <td>⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-4">TIER 4B</span></td>
+          <td class="profile-name">UEC Ujjain</td>
+          <td><span class="badge govt">Govt/State</span></td>
+          <td>₹3–5 LPA</td>
+          <td>₹3–4 LPA</td>
+          <td>₹10 LPA</td>
+          <td><span class="badge warn">50–60%</span></td>
+          <td>⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-4">TIER 4B</span></td>
+          <td class="profile-name">GEC Sagar / REC Rewa</td>
+          <td><span class="badge govt">Govt/State</span></td>
+          <td>₹2.5–4.5 LPA</td>
+          <td>₹2.5–3.5 LPA</td>
+          <td>₹8–12 LPA</td>
+          <td><span class="badge warn">40–55%</span></td>
+          <td>⭐½</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-3">TIER 3B</span></td>
+          <td class="profile-name">RJIT (Rustamji Inst.)</td>
+          <td><span class="badge govt">Govt/Defense</span></td>
+          <td>₹4–6 LPA</td>
+          <td>₹3.5–5 LPA</td>
+          <td>₹12–15 LPA</td>
+          <td><span class="badge ok">55–70%</span></td>
+          <td>⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-4">TIER 4A</span></td>
+          <td class="profile-name">Shri Vaishnav / Vaishnav Vidyapeeth</td>
+          <td><span class="badge pvt">Private</span></td>
+          <td>₹4–6 LPA</td>
+          <td>₹3.5–4.5 LPA</td>
+          <td>₹15–20 LPA</td>
+          <td><span class="badge warn">55–65%</span></td>
+          <td>⭐⭐</td>
+        </tr>
+        <tr>
+          <td><span class="badge tier-4">TIER 4B</span></td>
+          <td class="profile-name">SOIT RGPV / LNCT Excellence / LNCTE</td>
+          <td><span class="badge pvt">Private</span></td>
+          <td>₹3.5–5 LPA</td>
+          <td>₹3–4.5 LPA</td>
+          <td>₹12 LPA</td>
+          <td><span class="badge warn">50–65%</span></td>
+          <td>⭐⭐</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.75rem;color:var(--muted);font-family:'IBM Plex Mono',monospace;">
+    * IIT Indore avg of ₹47 LPA is for placed CSE students; with entire batch it's lower. VIT Bhopal ₹88 LPA highest is unverified outlier. All "highest packages" are for 1–4 students, not representative. Dom = Domestic offer.
+  </p>
+</section>
+
+<!-- COLLEGE PROFILES -->
+<section id="profiles">
+  <h2><span class="num">02</span> Detailed College Profiles</h2>
+
+  <!-- IIT INDORE -->
+  <div class="profile-section">
+    <div class="profile-header">
+      <div class="profile-name">🏛️ IIT Indore — CSE / AIML</div>
+      <div class="profile-meta">
+        <span class="badge tier-1">TIER 1</span>
+        <span class="badge govt">IIT / Central</span>
+        <span class="badge up">IMPROVING FAST</span>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-label">CSE Avg Package</div><div class="stat-value green">₹47 LPA (placed)</div></div>
+      <div class="stat-item"><div class="stat-label">CSE Median</div><div class="stat-value">₹28–32 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">CSE Highest</div><div class="stat-value yellow">₹137 LPA (Dom)</div></div>
+      <div class="stat-item"><div class="stat-label">Placement %</div><div class="stat-value green">96% (CSE)</div></div>
+      <div class="stat-item"><div class="stat-label">Avg Student Realistic</div><div class="stat-value">₹18–25 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">JEE Rank (CSE)</div><div class="stat-value red">~1100–1800</div></div>
+      <div class="stat-item"><div class="stat-label">Annual Fees</div><div class="stat-value">₹2.2 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">FAANG Access</div><div class="stat-value green">High</div></div>
+    </div>
+    <div class="pros-cons">
+      <div class="pros"><strong>Strengths</strong>
+        <ul>
+          <li>Google, DE Shaw, Goldman Sachs, Databricks visit campus</li>
+          <li>PPOs from top product companies (Cred, Microsoft, Oracle)</li>
+          <li>Research + IIT brand = excellent GATE/MS/PhD pathway</li>
+          <li>Coding culture extremely high; peer group is India's top 0.1%</li>
+          <li>Joint fests with IIM Indore; vibrant campus life despite being new-IIT</li>
+          <li>International packages available (Japan, Singapore)</li>
+          <li>NIRF 2025: Rank ~16 in Engineering, improving fast</li>
+        </ul>
+      </div>
+      <div class="cons"><strong>Weaknesses</strong>
+        <ul>
+          <li>Campus 25 km from Indore city; road conditions poor</li>
+          <li>Lower branches (Civil, MEMS) have weak placements</li>
+          <li>Infrastructure still developing vs old IITs</li>
+          <li>₹137 LPA highest is driven by one quant/HFT firm — not representative</li>
+          <li>Average includes a few 80–137 LPA outliers, inflating the mean</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict-box ok" style="margin-top:1rem;">
+      <strong>Honest Verdict</strong>
+      Best CSE college in MP by a significant margin. The ₹47 LPA "average" is skewed — realistic outcome for average IIT Indore CSE student is ₹18–25 LPA. Still excellent by any benchmark. If you can get here, don't think twice.
+    </div>
+  </div>
+
+  <!-- MANIT BHOPAL -->
+  <div class="profile-section">
+    <div class="profile-header">
+      <div class="profile-name">🏛️ MANIT Bhopal (NIT Bhopal) — CSE</div>
+      <div class="profile-meta">
+        <span class="badge tier-2">TIER 2A</span>
+        <span class="badge govt">NIT / Central</span>
+        <span class="badge ok">STABLE</span>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-label">CSE Avg (official)</div><div class="stat-value green">₹17–26 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">CSE Median (realistic)</div><div class="stat-value">₹10–13 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">CSE Highest</div><div class="stat-value yellow">₹82–85 LPA (Dom)</div></div>
+      <div class="stat-item"><div class="stat-label">Placement %</div><div class="stat-value green">90–95% (CSE)</div></div>
+      <div class="stat-item"><div class="stat-label">Avg Student Realistic</div><div class="stat-value">₹10–14 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">JEE Rank (CSE)</div><div class="stat-value">~15,000–22,000</div></div>
+      <div class="stat-item"><div class="stat-label">Annual Fees</div><div class="stat-value">₹1.7 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">FAANG Access</div><div class="stat-value">Moderate-High</div></div>
+    </div>
+    <div class="pros-cons">
+      <div class="pros"><strong>Strengths</strong>
+        <ul>
+          <li>Google, Microsoft, Amazon, Atlassian, Goldman Sachs visit</li>
+          <li>Strong coding culture; many students go off-campus to product roles</li>
+          <li>650-acre campus in Bhopal city — good location</li>
+          <li>NIT tag provides national job mobility</li>
+          <li>CSE batch has some of MP's strongest competitive programmers</li>
+          <li>Internships from 5th sem; good PPO culture</li>
+          <li>Excellent ROI — just ₹1.7 LPA fees</li>
+        </ul>
+      </div>
+      <div class="cons"><strong>Weaknesses</strong>
+        <ul>
+          <li>CSE mean of ₹25 LPA is inflated by 5–8 outliers; median is ₹10–13 LPA</li>
+          <li>Overall NIT Bhopal avg (all branches) is ₹13–15 LPA — much lower</li>
+          <li>Bureaucratic; faculty quality is inconsistent</li>
+          <li>Core branches (Civil, MEMS) have poor industry connections</li>
+          <li>Not up to old NIT standards (Trichy, Warangal) in brand value</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict-box ok" style="margin-top:1rem;">
+      <strong>Honest Verdict</strong>
+      Strong for CSE — especially for self-motivated coders. The official "avg" of ₹25 LPA is real but means-skewed. The realistic median outcome for an average MANIT CSE student is ₹10–14 LPA. Still the best government engineering option in Bhopal after IIT.
+    </div>
+  </div>
+
+  <!-- IIIT BHOPAL -->
+  <div class="profile-section">
+    <div class="profile-header">
+      <div class="profile-name">🏛️ IIIT Bhopal — CSE / IT</div>
+      <div class="profile-meta">
+        <span class="badge tier-2">TIER 2A</span>
+        <span class="badge iiit">IIIT / Central</span>
+        <span class="badge up">IMPROVING</span>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-label">CSE Avg (2025)</div><div class="stat-value green">₹19–20 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">CSE Median (est)</div><div class="stat-value">₹13–16 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">CSE Highest</div><div class="stat-value yellow">₹85 LPA (Dom)</div></div>
+      <div class="stat-item"><div class="stat-label">Placement %</div><div class="stat-value green">85–98%</div></div>
+      <div class="stat-item"><div class="stat-label">Avg Student Realistic</div><div class="stat-value">₹12–18 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">JoSAA Rank (CSE)</div><div class="stat-value">~28,000–46,000</div></div>
+      <div class="stat-item"><div class="stat-label">Annual Fees</div><div class="stat-value">₹1.5 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">FAANG Access</div><div class="stat-value">Moderate</div></div>
+    </div>
+    <div class="pros-cons">
+      <div class="pros"><strong>Strengths</strong>
+        <ul>
+          <li>Very strong upward trend — 2025 avg rebounded to ₹19.5 LPA after 2024 dip</li>
+          <li>Atlassian (₹85 LPA), Cred, Microsoft, Amazon, Nvidia visit</li>
+          <li>IIIT brand = CS-specific focus, good for coding culture</li>
+          <li>PPOs account for 20–25% of placements — high quality</li>
+          <li>Central government institution with no fees inflation</li>
+          <li>Strong off-campus culture built by seniors at top product firms</li>
+          <li>No permanent campus (on MANIT) — being resolved</li>
+        </ul>
+      </div>
+      <div class="cons"><strong>Weaknesses</strong>
+        <ul>
+          <li>2024 was brutal — avg dropped to ₹12 LPA, 60% placement (recession year)</li>
+          <li>No permanent campus — operates within MANIT</li>
+          <li>Small batch (200 students) — limited alumni network</li>
+          <li>No international offers reported in 2025</li>
+          <li>Highly volatile placement numbers year-to-year</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict-box ok" style="margin-top:1rem;">
+      <strong>Honest Verdict</strong>
+      Genuinely underrated at ~40,000 JoSAA rank. For CSE/IT, this is a solid government institution where top performers consistently land ₹20–85 LPA. Volatility is real (as 2024 showed), but 2025 recovery is strong. Better than most NITs at this rank.
+    </div>
+  </div>
+
+  <!-- IET DAVV -->
+  <div class="profile-section">
+    <div class="profile-header">
+      <div class="profile-name">🏛️ IET DAVV Indore — CSE / IT</div>
+      <div class="profile-meta">
+        <span class="badge tier-2">TIER 2B</span>
+        <span class="badge govt">State Govt / Autonomous</span>
+        <span class="badge ok">STABLE</span>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-label">CSE Avg (realistic)</div><div class="stat-value">₹8–12 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">CSE Median</div><div class="stat-value">₹6–8 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">CSE Highest</div><div class="stat-value yellow">₹57–70 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Placement %</div><div class="stat-value green">85–95% (CSE)</div></div>
+      <div class="stat-item"><div class="stat-label">Avg Student Realistic</div><div class="stat-value">₹5–8 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Fees/Year</div><div class="stat-value green">₹60,000–80,000</div></div>
+      <div class="stat-item"><div class="stat-label">FAANG Access</div><div class="stat-value">Low-Moderate</div></div>
+    </div>
+    <div class="pros-cons">
+      <div class="pros"><strong>Strengths</strong>
+        <ul>
+          <li>Best ROI in all of MP — ₹60–80K/year fees, decent placements</li>
+          <li>Located in Indore (MP's economic hub) — city access is huge</li>
+          <li>Mass recruiters (Accenture, TCS) + some product companies visit</li>
+          <li>Active alumni in Mumbai, Pune, Bangalore tech corridors</li>
+          <li>Strong off-campus culture among motivated students</li>
+          <li>IET > SGSITS for placement cell quality</li>
+        </ul>
+      </div>
+      <div class="cons"><strong>Weaknesses</strong>
+        <ul>
+          <li>Most placements still dominated by 3–7 LPA mass recruiters</li>
+          <li>Official claims of ₹70 LPA highest are for 1–2 outlier students</li>
+          <li>Faculty quality uneven; lectures often from RGPV curriculum</li>
+          <li>Infrastructure outdated compared to private colleges</li>
+          <li>No strong coding/hackathon culture institutionally</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict-box" style="margin-top:1rem;">
+      <strong>Honest Verdict</strong>
+      Brilliant ROI. If you're getting CSE at IET DAVV vs CSE at LNCT/Medicaps, choose DAVV without hesitation — same or better outcome at 1/10th the private college fees. The brand has genuine local respect in Indore. But don't expect product company visits unless you grind hard off-campus.
+    </div>
+  </div>
+
+  <!-- SGSITS -->
+  <div class="profile-section">
+    <div class="profile-header">
+      <div class="profile-name">🏛️ SGSITS Indore — CSE / CS</div>
+      <div class="profile-meta">
+        <span class="badge tier-2">TIER 2B</span>
+        <span class="badge govt">State Govt / Autonomous</span>
+        <span class="badge ok">STABLE</span>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-label">CSE Avg (realistic)</div><div class="stat-value">₹8–10 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">NIRF Median (UG)</div><div class="stat-value">₹7 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">CSE Highest (2023)</div><div class="stat-value yellow">₹43 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Placement %</div><div class="stat-value">75–85% (CSE)</div></div>
+      <div class="stat-item"><div class="stat-label">Fees/Year</div><div class="stat-value green">₹70,000–90,000</div></div>
+      <div class="stat-item"><div class="stat-label">FAANG Access</div><div class="stat-value">Low</div></div>
+    </div>
+    <div class="pros-cons">
+      <div class="pros"><strong>Strengths</strong>
+        <ul>
+          <li>Indore location advantage — self-driven students get good off-campus roles</li>
+          <li>Strong alumni network in core tech companies</li>
+          <li>Amazon, Google, Adobe, Samsung, Deloitte have visited historically</li>
+          <li>Low fees = exceptional ROI for motivated students</li>
+          <li>NIRF median of ₹7 LPA is actually decent for state govt college</li>
+        </ul>
+      </div>
+      <div class="cons"><strong>Weaknesses</strong>
+        <ul>
+          <li>IET DAVV has better placement cell and slightly better outcomes</li>
+          <li>Overall placement % is lower vs IET</li>
+          <li>Infrastructure is aging; labs need upgrade</li>
+          <li>Strictness and attendance rules can be burdensome</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict-box" style="margin-top:1rem;">
+      <strong>Honest Verdict</strong>
+      Slightly weaker than IET DAVV but still a strong government college in Indore. Excellent ROI. Prefer IET DAVV CSE if you get it. If you're at SGSITS, the Indore location makes self-prep and off-campus hunting very viable.
+    </div>
+  </div>
+
+  <!-- JEC JABALPUR -->
+  <div class="profile-section">
+    <div class="profile-header">
+      <div class="profile-name">🏛️ JEC Jabalpur — CSE</div>
+      <div class="profile-meta">
+        <span class="badge tier-3">TIER 3A</span>
+        <span class="badge govt">State Govt</span>
+        <span class="badge ok">UNDERRATED</span>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-label">CSE Avg (realistic)</div><div class="stat-value">₹5–8 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Median</div><div class="stat-value">₹4.5–6 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Highest</div><div class="stat-value">₹20–25 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Placement % (CSE)</div><div class="stat-value">70–80%</div></div>
+      <div class="stat-item"><div class="stat-label">Fees/Year</div><div class="stat-value green">~₹28,000</div></div>
+    </div>
+    <div class="pros-cons">
+      <div class="pros"><strong>Strengths</strong>
+        <ul>
+          <li>Oldest and most reputed state engineering college in MP (est. 1947)</li>
+          <li>Lowest fees (~₹28,000/year) — incredible ROI</li>
+          <li>Strong alumni base in government and PSU sectors</li>
+          <li>Placement% historically better than UIT RGPV (83% vs 48% in CSE)</li>
+          <li>Good location in Jabalpur city</li>
+        </ul>
+      </div>
+      <div class="cons"><strong>Weaknesses</strong>
+        <ul>
+          <li>Jabalpur is not a major IT hub — limits on-campus company diversity</li>
+          <li>Placement outcomes mostly limited to mid-tier IT companies</li>
+          <li>Infrastructure significantly behind Bhopal/Indore colleges</li>
+          <li>Limited exposure to startup/product culture</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- UIT RGPV -->
+  <div class="profile-section">
+    <div class="profile-header">
+      <div class="profile-name">🏛️ UIT RGPV Bhopal — CSE</div>
+      <div class="profile-meta">
+        <span class="badge tier-3">TIER 3A</span>
+        <span class="badge govt">State Univ / Autonomous</span>
+        <span class="badge warn">OVERRATED</span>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-label">CSE Avg</div><div class="stat-value">₹4–7 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">NIRF Median (2024)</div><div class="stat-value">₹7.1 LPA (all UG)</div></div>
+      <div class="stat-item"><div class="stat-label">Highest (2024)</div><div class="stat-value">₹54 LPA (few)</div></div>
+      <div class="stat-item"><div class="stat-label">Placement %</div><div class="stat-value warn">40–60% (CSE)</div></div>
+      <div class="stat-item"><div class="stat-label">Fees/Year</div><div class="stat-value green">~₹50,000</div></div>
+    </div>
+    <div class="pros-cons">
+      <div class="pros"><strong>Strengths</strong>
+        <ul>
+          <li>RGPV "university" brand has recognition across MP employers</li>
+          <li>Bhopal location is a major advantage for off-campus</li>
+          <li>NIRF median improved from ₹4.25 to ₹7.1 LPA — genuine progress</li>
+          <li>Very low fees for state university quality</li>
+          <li>Good for GATE prep if self-motivated</li>
+        </ul>
+      </div>
+      <div class="cons"><strong>Weaknesses</strong>
+        <ul>
+          <li>Only 40% CSE students placed on-campus per student reviews</li>
+          <li>Academic quality inconsistent; "Shivani book" culture is real</li>
+          <li>Placement cell is weak compared to IET/SGSITS/JEC</li>
+          <li>Faculty motivation is low; theoretical-heavy curriculum</li>
+          <li>The ₹7.1 LPA median is for ALL UG students — CSE-specific is lower per reviews</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict-box warn" style="margin-top:1rem;">
+      <strong>Honest Verdict</strong>
+      UIT RGPV is often compared to IET DAVV/SGSITS but is notably weaker in actual CSE placement outcomes. If you're getting CSE at UIT RGPV, students in Bhopal city with the right skills can still land decent off-campus roles — but the institution itself won't help you much.
+    </div>
+  </div>
+
+  <!-- JIIT NOIDA -->
+  <div class="profile-section">
+    <div class="profile-header">
+      <div class="profile-name">🏛️ JIIT Noida (Sec-62 / Sec-128) — CSE</div>
+      <div class="profile-meta">
+        <span class="badge tier-3">TIER 3A</span>
+        <span class="badge pvt">Private / Deemed</span>
+        <span class="badge ok">STRONG FOR PRIVATE</span>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-label">CSE Avg (2025)</div><div class="stat-value green">₹11.13 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Median (2025)</div><div class="stat-value">₹7.93 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Highest (2025)</div><div class="stat-value yellow">₹62 LPA (Dom)</div></div>
+      <div class="stat-item"><div class="stat-label">Placement %</div><div class="stat-value green">90–95% (CSE)</div></div>
+      <div class="stat-item"><div class="stat-label">Avg Student Realistic</div><div class="stat-value">₹7–12 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Annual Fees</div><div class="stat-value red">₹3.5–4 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">FAANG Access</div><div class="stat-value">Moderate</div></div>
+      <div class="stat-item"><div class="stat-label">Int'l Packages</div><div class="stat-value warn">Rare</div></div>
+    </div>
+    <div class="pros-cons">
+      <div class="pros"><strong>Strengths</strong>
+        <ul>
+          <li>Best private college for CSE in North India outside top-10 private (BITS/VIT Vellore)</li>
+          <li>Atlassian, Microsoft, LinkedIn, Cisco, Amazon, Zomato visit campus</li>
+          <li>No-nonsense academic culture — focused on engineering outcomes</li>
+          <li>Noida/NCR location = massive off-campus advantage</li>
+          <li>900+ job offers for 2025 batch; 260+ companies</li>
+          <li>IBM CoE, Cisco Academy certifications embedded</li>
+          <li>Median of ₹7.93 LPA is honest and transparent — rare for private colleges</li>
+        </ul>
+      </div>
+      <div class="cons"><strong>Weaknesses</strong>
+        <ul>
+          <li>High fees (₹3.5–4 LPA/year) — ROI is questionable vs MANIT/IIIT Bhopal</li>
+          <li>Sec-62 campus is small (15 acres); Sec-128 is even smaller</li>
+          <li>65–70% attendance enforced strictly; limited freedom</li>
+          <li>Mass hirers (Capgemini, TCS, Accenture) dominate bulk offers</li>
+          <li>Median ₹7.93 LPA is what most students actually get — manage expectations</li>
+          <li>Placement is heavily self-effort-dependent; college provides the platform, not the result</li>
+          <li>Student reviews indicate dissatisfaction with limited campus amenities</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict-box" style="margin-top:1rem;">
+      <strong>Honest Verdict</strong>
+      JIIT is one of the strongest private colleges in India for CSE but the hype around it is overblown. The median of ₹7.93 LPA tells the real story — you are spending ₹14–16 lakhs total on fees to likely exit at ₹8–12 LPA. The ROI doesn't beat government colleges. However, for NCR-based students or those without government college options, JIIT CSE is a defensible choice. The coding culture and peer quality are clearly above average for private institutions.
+    </div>
+  </div>
+
+  <!-- VIT BHOPAL -->
+  <div class="profile-section">
+    <div class="profile-header">
+      <div class="profile-name">🏛️ VIT Bhopal — CSE / AIML</div>
+      <div class="profile-meta">
+        <span class="badge tier-3">TIER 3B</span>
+        <span class="badge pvt">Private</span>
+        <span class="badge warn">LOCATION ISSUE</span>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-label">CSE Avg (2024)</div><div class="stat-value">₹9–11 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">NIRF Median (UG)</div><div class="stat-value">₹5.1 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Highest (2024)</div><div class="stat-value yellow">₹70–88 LPA*</div></div>
+      <div class="stat-item"><div class="stat-label">Placement %</div><div class="stat-value green">85–90%</div></div>
+      <div class="stat-item"><div class="stat-label">Annual Fees</div><div class="stat-value red">₹3.5–4.5 LPA</div></div>
+    </div>
+    <div class="pros-cons">
+      <div class="pros"><strong>Strengths</strong>
+        <ul>
+          <li>VIT brand (Vellore parent) attracts Microsoft for 6 consecutive years</li>
+          <li>700+ companies visited; centralized CDC placement system</li>
+          <li>Dream offers (₹10 LPA+) and Super Dream offers available</li>
+          <li>Improving placement track record year-on-year</li>
+          <li>Good infrastructure and hostel facilities</li>
+        </ul>
+      </div>
+      <div class="cons"><strong>Weaknesses</strong>
+        <ul>
+          <li>Campus is 70 km from Bhopal — extremely isolated location</li>
+          <li>NIRF median of ₹5.1 LPA tells a different story than the "₹11 LPA avg"</li>
+          <li>Very high fees for the outcome delivered vs MANIT/IIIT Bhopal</li>
+          <li>Not the same quality as VIT Vellore — different peer group and outcomes</li>
+          <li>Most ₹80+ LPA highest packages are unverified or extremely rare</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict-box warn" style="margin-top:1rem;">
+      <strong>Honest Verdict</strong>
+      VIT Bhopal is improving but suffers from location isolation and inflated claims. The NIRF median of ₹5.1 LPA vs advertised ₹11 LPA average should raise red flags. If VIT Bhopal is your only option among private colleges, it's reasonable — but never confuse it with VIT Vellore.
+    </div>
+  </div>
+
+  <!-- LNCT -->
+  <div class="profile-section">
+    <div class="profile-header">
+      <div class="profile-name">🏛️ LNCT Bhopal — CSE / AIML</div>
+      <div class="profile-meta">
+        <span class="badge tier-4">TIER 4A</span>
+        <span class="badge pvt">Private</span>
+        <span class="badge warn">OVERHYPED</span>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-label">CSE Avg (realistic)</div><div class="stat-value">₹5–6 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">NIRF Median (2024)</div><div class="stat-value warn">₹5.5 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Highest Claimed</div><div class="stat-value">₹45 LPA (Intuit)</div></div>
+      <div class="stat-item"><div class="stat-label">Bulk Offers</div><div class="stat-value warn">TCS: 1500 @ ₹3.36 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Annual Fees</div><div class="stat-value red">₹1.2–1.5 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Students Placed</div><div class="stat-value">3390 (across all)</div></div>
+    </div>
+    <div class="pros-cons">
+      <div class="pros"><strong>Strengths</strong>
+        <ul>
+          <li>Largest private engineering college in Central India — brand recognition</li>
+          <li>TCS, Infosys, Accenture, Cognizant, Capgemini regularly visit</li>
+          <li>Mass placement percentage is high (~80–85% for CSE)</li>
+          <li>Affordable fees vs other private colleges</li>
+          <li>NIRF ranked in 201 in 2025 — some official recognition</li>
+          <li>Deutsche Bank (₹19.6 LPA) and Cisco (₹17.6 LPA) also visit — rare gems</li>
+        </ul>
+      </div>
+      <div class="cons"><strong>Weaknesses</strong>
+        <ul>
+          <li>TCS alone gives 1500 offers at ₹3.36 LPA — this drives the "high placement %" claim</li>
+          <li>Most students exit at ₹3–6 LPA despite marketing of "82 LPA highest"</li>
+          <li>Strict attendance (75%), uniform policies — rigid environment</li>
+          <li>Faculty quality poor for research/advanced topics</li>
+          <li>ROI is questionable — fees comparable to government colleges at nearby IET/JEC</li>
+          <li>Large batch = individual attention is minimal</li>
+          <li>Product company visits are extremely rare (2–3 per year)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict-box warn" style="margin-top:1rem;">
+      <strong>Honest Verdict</strong>
+      LNCT is the most overhyped private college in MP. The "3390 placements" claim includes 1500 TCS offers at ₹3.36 LPA — this is mass recruiter farming, not quality placement. If you're a self-driven coder, you'll likely get a better outcome than LNCT via self-prep + off-campus, regardless of which MP college you attend. LNCT adds little additional value over IET DAVV/JEC/UIT RGPV at 2–3x the fees.
+    </div>
+  </div>
+
+  <!-- MEDICAPS -->
+  <div class="profile-section">
+    <div class="profile-header">
+      <div class="profile-name">🏛️ Medicaps University Indore — CSE / AIML</div>
+      <div class="profile-meta">
+        <span class="badge tier-4">TIER 4A</span>
+        <span class="badge pvt">Private</span>
+        <span class="badge ok">AVERAGE</span>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-label">CSE Avg (2025)</div><div class="stat-value">₹6–6.5 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">CSE Median</div><div class="stat-value warn">₹4–4.25 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Highest</div><div class="stat-value">₹52 LPA (rare)</div></div>
+      <div class="stat-item"><div class="stat-label">Placement %</div><div class="stat-value">70–80%</div></div>
+      <div class="stat-item"><div class="stat-label">Annual Fees</div><div class="stat-value red">₹2–2.1 LPA</div></div>
+    </div>
+    <div class="pros-cons">
+      <div class="pros"><strong>Strengths</strong>
+        <ul>
+          <li>Indore location — excellent for off-campus opportunities</li>
+          <li>350+ companies visited; Amazon, Google, Goldman Sachs listed</li>
+          <li>Better outcomes than LNCT/SISTec for CSE median packages</li>
+          <li>Improving year-on-year</li>
+        </ul>
+      </div>
+      <div class="cons"><strong>Weaknesses</strong>
+        <ul>
+          <li>Median of ₹4–4.25 LPA shows most students get average outcomes</li>
+          <li>Google/Goldman visits are for 1–2 students max — not representative</li>
+          <li>Reddit feedback: "typical tier-2 private college, outcomes depend on self-effort"</li>
+          <li>Strict rules; inconsistent faculty</li>
+          <li>High fees for the outcome (₹2.1 LPA/yr vs ₹60K at IET DAVV)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict-box warn" style="margin-top:1rem;">
+      <strong>Honest Verdict</strong>
+      Medicaps is an "average" private college in Indore. The Indore location helps motivated students. If IET DAVV / SGSITS is not an option and you're stuck choosing among Medicaps, Acropolis, IPS Academy — Medicaps is a reasonable choice but manage expectations at the ₹4–4.25 LPA median.
+    </div>
+  </div>
+
+  <!-- ACROPOLIS -->
+  <div class="profile-section">
+    <div class="profile-header">
+      <div class="profile-name">🏛️ Acropolis Institute Indore — CSE</div>
+      <div class="profile-meta">
+        <span class="badge tier-4">TIER 4A</span>
+        <span class="badge pvt">Private</span>
+        <span class="badge ok">DECENT</span>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-label">CSE Avg (est)</div><div class="stat-value">₹4–7 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Median</div><div class="stat-value warn">₹4–5 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Highest</div><div class="stat-value">₹18–25 LPA</div></div>
+      <div class="stat-item"><div class="stat-label">Annual Fees</div><div class="stat-value red">₹1.5–1.8 LPA</div></div>
+    </div>
+    <div class="pros-cons">
+      <div class="pros"><strong>Strengths</strong>
+        <ul>
+          <li>Indore location gives strong off-campus advantage</li>
+          <li>Better startup/entrepreneurship support than LNCT</li>
+          <li>Smaller batch — more individual faculty attention</li>
+          <li>NAAC accredited; decent infrastructure for an Indore private college</li>
+        </ul>
+      </div>
+      <div class="cons"><strong>Weaknesses</strong>
+        <ul>
+          <li>Limited company diversity; mostly mass recruiters</li>
+          <li>Faculty quality inconsistent</li>
+          <li>No distinct competitive advantage over Medicaps</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict-box" style="margin-top:1rem;">
+      <strong>Honest Verdict (Medicaps vs Acropolis)</strong>
+      Both are similar. Medicaps slightly edges out for CSE placements and infrastructure. Acropolis may edge slightly for startup-mindset students and has a more manageable batch size. Neither is particularly impressive without strong self-effort.
+    </div>
+  </div>
+
+  <!-- TIER 4-5 SUMMARY -->
+  <div class="profile-section">
+    <div class="profile-header">
+      <div class="profile-name">📋 Tier 4B/5 Private Colleges — Bulk Summary</div>
+      <div class="profile-meta">
+        <span class="badge tier-5">TIER 4B / 5</span>
+        <span class="badge pvt">Private</span>
+      </div>
+    </div>
+    <p>The following colleges follow a similar pattern: <strong>SISTec, IPS Academy, Prestige Institute, SAGE University, Oriental Bhopal, Technocrats, Shri Vaishnav, LNCT Excellence, LNCTE, SOIT RGPV, Bansal, RKDF, Truba, Patel College</strong>.</p>
+    <div class="verdict-box warn" style="margin-top:1rem;">
+      <strong>Common Pattern (All Tier 4B–5 Private Colleges)</strong>
+      <br>• CSE Average: ₹3–6 LPA; Median: ₹2.5–4 LPA; Highest claimed: ₹10–30 LPA (1–2 outlier students)
+      <br>• Placement % claimed: 80–95% (reality: 40–60% of total batch, ~70–80% of eligible students)
+      <br>• Mass recruiters only: TCS, Wipro, Infosys, Cognizant — offering ₹3.36–4.5 LPA
+      <br>• Infrastructure: Variable. SISTec and SAGE are newer with decent facilities
+      <br>• ROI: Generally poor — paying ₹1.5–3 LPA/year for outcomes achievable at state govt colleges at ₹30–80K/year
+      <br>• Placement stats: Mostly inflated. "Highest package" is always 1 outlier student
+      <br>• Best use case: Students who can't crack DTE MP counselling cutoffs for IET/SGSITS/JEC and want Bhopal/Indore location advantage with some placement support
+    </div>
+    <p>Among these, <strong>SISTec (Gandhi Nagar)</strong> and <strong>Prestige Institute (Indore)</strong> tend to have slightly better outcomes than Bansal/RKDF/Truba/Patel which are primarily known for low admission standards and high seat capacity.</p>
+  </div>
+
+  <!-- GOVT COLLEGE SUMMARY TABLE -->
+  <div class="profile-section">
+    <div class="profile-header">
+      <div class="profile-name">📋 Lower Government Colleges (MPDTE) — CSE Summary</div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>College</th><th>Location</th><th>CSE Avg (est)</th><th>Fees/Year</th><th>Best For</th><th>Verdict</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>SATI Vidisha</td><td>Vidisha (small city)</td><td>₹3–5 LPA</td><td>~₹87K</td><td>GATE prep</td><td><span class="badge warn">Below Avg</span></td></tr>
+          <tr><td>UEC Ujjain</td><td>Ujjain</td><td>₹3–5 LPA</td><td>~₹1 LPA</td><td>Local employment</td><td><span class="badge warn">Below Avg</span></td></tr>
+          <tr><td>MITS Gwalior</td><td>Gwalior</td><td>₹4–7 LPA</td><td>~₹80K</td><td>GATE, off-campus</td><td><span class="badge ok">Avg</span></td></tr>
+          <tr><td>GEC Sagar</td><td>Sagar</td><td>₹2.5–4 LPA</td><td>~₹40K</td><td>PSU/Govt jobs</td><td><span class="badge warn">Weak Placements</span></td></tr>
+          <tr><td>REC Rewa</td><td>Rewa</td><td>₹2.5–4 LPA</td><td>~₹40K</td><td>PSU/Govt jobs</td><td><span class="badge warn">Weak Placements</span></td></tr>
+          <tr><td>RJIT (Rustamji)</td><td>Tekanpur, Gwalior</td><td>₹4–6 LPA</td><td>~₹80K</td><td>Defense background</td><td><span class="badge ok">Avg</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.78rem;color:var(--muted);">Note: GEC Sagar, REC Rewa, and smaller MPDTE colleges offer ultra-low fees. Best suited for students targeting GATE/PSU/government roles rather than private IT sector placements. Off-campus self-prep remains the primary path for good packages from these institutions.</p>
+  </div>
+</section>
+
+<!-- MEGA COMPARISON TABLE -->
+<section id="mega-table">
+  <h2><span class="num">03</span> Mega Comparison Table — All Dimensions</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th>Parameter</th>
+        <th>IIT Indore</th>
+        <th>MANIT (NIT)</th>
+        <th>IIIT Bhopal</th>
+        <th>IET DAVV</th>
+        <th>SGSITS</th>
+        <th>JIIT Noida</th>
+        <th>JEC Jabalpur</th>
+        <th>UIT RGPV</th>
+        <th>VIT Bhopal</th>
+        <th>LNCT</th>
+        <th>Medicaps</th>
+      </tr></thead>
+      <tbody>
+        <tr><td><b>CSE Median Pkg</b></td><td class="stat-value green">₹28–32L</td><td>₹12–15L</td><td>₹13–16L</td><td>₹6–8L</td><td>₹6–8L</td><td>₹7.93L</td><td>₹5–6L</td><td>₹5–7L</td><td>₹5–6L</td><td>₹4–5.5L</td><td>₹4–4.25L</td></tr>
+        <tr><td><b>Avg Student (Realistic)</b></td><td>₹18–25L</td><td>₹10–14L</td><td>₹12–18L</td><td>₹5–8L</td><td>₹5–8L</td><td>₹7–12L</td><td>₹4–7L</td><td>₹4–6L</td><td>₹6–10L</td><td>₹4–6L</td><td>₹4–6L</td></tr>
+        <tr><td><b>FAANG/Product Access</b></td><td class="stat-value green">High</td><td>Med-High</td><td>Moderate</td><td>Low</td><td>Low</td><td>Moderate</td><td>Very Low</td><td>Very Low</td><td>Low-Med</td><td>Very Low</td><td>Very Low</td></tr>
+        <tr><td><b>Coding Culture</b></td><td class="stat-value green">★★★★★</td><td>★★★★</td><td>★★★★</td><td>★★★</td><td>★★★</td><td>★★★★</td><td>★★</td><td>★★</td><td>★★★</td><td>★★</td><td>★★</td></tr>
+        <tr><td><b>CP Culture</b></td><td class="stat-value green">★★★★★</td><td>★★★★</td><td>★★★★</td><td>★★</td><td>★★</td><td>★★★</td><td>★★</td><td>★</td><td>★★</td><td>★★</td><td>★</td></tr>
+        <tr><td><b>AI/ML Opportunities</b></td><td class="stat-value green">★★★★★</td><td>★★★★</td><td>★★★★</td><td>★★</td><td>★★</td><td>★★★</td><td>★</td><td>★</td><td>★★</td><td>★★</td><td>★★</td></tr>
+        <tr><td><b>Research Opportunities</b></td><td class="stat-value green">★★★★★</td><td>★★★</td><td>★★</td><td>★★</td><td>★★</td><td>★★</td><td>★</td><td>★</td><td>★</td><td>★</td><td>★</td></tr>
+        <tr><td><b>Startup Ecosystem</b></td><td>★★★★</td><td>★★★</td><td>★★★</td><td>★★★</td><td>★★</td><td>★★★</td><td>★</td><td>★</td><td>★★</td><td>★</td><td>★★</td></tr>
+        <tr><td><b>Peer Group Quality</b></td><td class="stat-value green">★★★★★</td><td>★★★★</td><td>★★★★</td><td>★★★</td><td>★★★</td><td>★★★</td><td>★★</td><td>★★</td><td>★★</td><td>★★</td><td>★★</td></tr>
+        <tr><td><b>Faculty Quality</b></td><td class="stat-value green">★★★★</td><td>★★★</td><td>★★★</td><td>★★★</td><td>★★★</td><td>★★★</td><td>★★</td><td>★★</td><td>★★</td><td>★★</td><td>★★</td></tr>
+        <tr><td><b>Infrastructure</b></td><td>★★★★</td><td>★★★★</td><td>★★(campus)</td><td>★★</td><td>★★</td><td>★★★</td><td>★★</td><td>★★</td><td>★★★</td><td>★★★</td><td>★★★</td></tr>
+        <tr><td><b>Campus Life</b></td><td>★★★★</td><td>★★★</td><td>★★★</td><td>★★</td><td>★★</td><td>★★</td><td>★★</td><td>★★</td><td>★★★</td><td>★★</td><td>★★</td></tr>
+        <tr><td><b>College Freedom</b></td><td class="stat-value green">★★★★</td><td>★★★</td><td>★★★</td><td>★★★</td><td>★★★</td><td>★★</td><td>★★</td><td>★★</td><td>★★</td><td>★</td><td>★★</td></tr>
+        <tr><td><b>Brand Value (national)</b></td><td class="stat-value green">★★★★★</td><td>★★★★</td><td>★★★</td><td>★★</td><td>★★</td><td>★★★</td><td>★★</td><td>★★</td><td>★★</td><td>★★</td><td>★★</td></tr>
+        <tr><td><b>Alumni Network</b></td><td>★★★★</td><td>★★★★</td><td>★★</td><td>★★★</td><td>★★★</td><td>★★★</td><td>★★</td><td>★★</td><td>★★</td><td>★★</td><td>★★</td></tr>
+        <tr><td><b>ROI (fees vs outcome)</b></td><td class="stat-value green">★★★★★</td><td class="stat-value green">★★★★★</td><td class="stat-value green">★★★★★</td><td class="stat-value green">★★★★★</td><td class="stat-value green">★★★★★</td><td>★★★</td><td class="stat-value green">★★★★★</td><td>★★★★</td><td>★★</td><td>★★★</td><td>★★</td></tr>
+        <tr><td><b>Off-Campus Culture</b></td><td>★★★★★</td><td>★★★★★</td><td>★★★★★</td><td>★★★</td><td>★★★</td><td>★★★★</td><td>★★</td><td>★★</td><td>★★★</td><td>★★</td><td>★★</td></tr>
+        <tr><td><b>Inflated Stats?</b></td><td><span class="badge ok">Mostly Honest</span></td><td><span class="badge warn">Avg inflated</span></td><td><span class="badge warn">Volatile</span></td><td><span class="badge ok">Mostly OK</span></td><td><span class="badge ok">Mostly OK</span></td><td><span class="badge ok">Transparent</span></td><td><span class="badge ok">Modest</span></td><td><span class="badge ok">NIRF honest</span></td><td><span class="badge down">Inflated</span></td><td><span class="badge down">Heavily Inflated</span></td><td><span class="badge down">Inflated</span></td></tr>
+        <tr><td><b>Best For</b></td><td>All types</td><td>Coders, FAANG</td><td>Coders</td><td>ROI seekers</td><td>ROI seekers</td><td>NCR placements</td><td>Low-cost+ROI</td><td>GATE prep</td><td>VIT brand</td><td>Mass recruit</td><td>Indore loc</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ALL RANKINGS -->
+<section id="rankings">
+  <h2><span class="num">04</span> All Rankings — 10 Categories</h2>
+
+  <h3>🏆 1. Overall Best (CSE/AIML)</h3>
+  <div class="card-grid">
+    <div class="card"><div class="card-header"><div class="card-name">IIT Indore</div><div class="card-rank">1</div></div><div class="card-stat">Median ₹28–32 LPA | <span>FAANG: High</span></div><div class="card-verdict">Best in MP by every metric. Non-negotiable #1.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">MANIT Bhopal</div><div class="card-rank">2</div></div><div class="card-stat">Median ₹12–15 LPA | <span>NIT Tag</span></div><div class="card-verdict">Best government option in Bhopal after IIT Indore. Strong coding culture.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">IIIT Bhopal</div><div class="card-rank">3</div></div><div class="card-stat">Avg ₹19–20 LPA | <span>Central Govt</span></div><div class="card-verdict">Underrated gem. Recovering strongly after 2024 recession.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">IET DAVV</div><div class="card-rank">4</div></div><div class="card-stat">Avg ₹8–12 LPA | <span>Best ROI</span></div><div class="card-verdict">State govt, Indore location, incredible ROI. Highly underrated.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">JIIT Noida</div><div class="card-rank">5</div></div><div class="card-stat">Avg ₹11.13 LPA | <span>Best Private NCR</span></div><div class="card-verdict">Best private college for CSE in this comparison. NCR advantage real.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">SGSITS Indore</div><div class="card-rank">6</div></div><div class="card-stat">Avg ₹8–10 LPA | <span>Indore Location</span></div><div class="card-verdict">Solid state govt option. Close race with IET DAVV.</div></div>
+  </div>
+
+  <h3>💰 2. Best Placement Rankings (Campus)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>College</th><th>CSE Median</th><th>Top Companies</th><th>Int'l Offers</th></tr></thead>
+      <tbody>
+        <tr class="rank-1"><td class="rank-num">1</td><td>IIT Indore</td><td>₹28–32 LPA</td><td>Google, DE Shaw, Databricks, Goldman</td><td>Yes (Japan, Singapore)</td></tr>
+        <tr class="rank-2"><td class="rank-num">2</td><td>MANIT Bhopal</td><td>₹12–15 LPA</td><td>Microsoft, Amazon, Atlassian, GS</td><td>Rare</td></tr>
+        <tr class="rank-3"><td class="rank-num">3</td><td>IIIT Bhopal</td><td>₹13–16 LPA</td><td>Atlassian, Cred, Microsoft, Nvidia</td><td>None in 2025</td></tr>
+        <tr><td class="rank-num">4</td><td>JIIT Noida</td><td>₹7.93 LPA</td><td>Atlassian, LinkedIn, Cisco, Amazon</td><td>Rare</td></tr>
+        <tr><td class="rank-num">5</td><td>IET DAVV</td><td>₹6–8 LPA</td><td>ZS, Deutsche Bank, Adobe (occasional)</td><td>No</td></tr>
+        <tr><td class="rank-num">6</td><td>SGSITS Indore</td><td>₹6–8 LPA</td><td>Goldman Sachs, Amazon, Adobe (past)</td><td>No</td></tr>
+        <tr><td class="rank-num">7</td><td>VIT Bhopal</td><td>₹5–6 LPA</td><td>Microsoft, Amazon, Intel, JP Morgan</td><td>Yes (claimed)</td></tr>
+        <tr><td class="rank-num">8</td><td>JEC Jabalpur</td><td>₹5–6 LPA</td><td>TCS, Infosys, regional IT firms</td><td>No</td></tr>
+        <tr><td class="rank-num">9</td><td>UIT RGPV</td><td>₹5–7 LPA</td><td>TCS, Infosys, Wipro, Impetus</td><td>No</td></tr>
+        <tr><td class="rank-num">10</td><td>LNCT Bhopal</td><td>₹4–5.5 LPA</td><td>TCS (1500!), Capgemini, Cognizant</td><td>No</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>💻 3. Best Coding Culture</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>College</th><th>CP Scene</th><th>Hackathons</th><th>Open Source</th></tr></thead>
+      <tbody>
+        <tr class="rank-1"><td class="rank-num">1</td><td>IIT Indore</td><td>ICPC teams, Codeforces grandmasters</td><td>Active</td><td>Strong</td></tr>
+        <tr class="rank-2"><td class="rank-num">2</td><td>MANIT Bhopal</td><td>LeetCode culture; many Codeforces rated</td><td>Moderate</td><td>Growing</td></tr>
+        <tr class="rank-3"><td class="rank-num">3</td><td>IIIT Bhopal</td><td>CS-only college drives focus</td><td>Moderate</td><td>Moderate</td></tr>
+        <tr><td class="rank-num">4</td><td>JIIT Noida</td><td>Good LeetCode culture; peer push</td><td>Moderate</td><td>Moderate</td></tr>
+        <tr><td class="rank-num">5</td><td>IET DAVV</td><td>Motivated individuals; less institutional</td><td>Low</td><td>Low</td></tr>
+        <tr><td class="rank-num">6</td><td>SGSITS</td><td>Peer-driven coding culture in CSE batch</td><td>Low</td><td>Low</td></tr>
+        <tr><td class="rank-num">7</td><td>VIT Bhopal</td><td>VIT coding contests; moderate LeetCode</td><td>Moderate</td><td>Low</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>📈 4. Best ROI (Fees vs Outcome)</h3>
+  <div class="card-grid">
+    <div class="card"><div class="card-header"><div class="card-name">IIT Indore</div><div class="card-rank">1</div></div><div class="card-stat">Fees: ₹2.2 LPA/yr | Median: ₹28 LPA | <span>9x return</span></div><div class="card-verdict">Best ROI for any college in India after old IITs.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">IIIT Bhopal</div><div class="card-rank">2</div></div><div class="card-stat">Fees: ₹1.5 LPA/yr | Avg: ₹19 LPA | <span>~8x return</span></div><div class="card-verdict">Exceptional ROI for JoSAA rank 28K–46K students.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">JEC Jabalpur</div><div class="card-rank">3</div></div><div class="card-stat">Fees: ₹28K/yr | Avg: ₹5–8 LPA | <span>~15x return</span></div><div class="card-verdict">Absurdly cheap. Even ₹5 LPA outcome = massive ROI.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">IET DAVV</div><div class="card-rank">4</div></div><div class="card-stat">Fees: ₹70–80K/yr | Avg: ₹8–12 LPA</div><div class="card-verdict">Best private-vs-govt comparison: massively outperforms Medicaps at 1/30th fees.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">MANIT Bhopal</div><div class="card-rank">5</div></div><div class="card-stat">Fees: ₹1.7 LPA/yr | Median: ₹12–15 LPA</div><div class="card-verdict">NIT quality at government prices. No brainer.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">UIT RGPV</div><div class="card-rank">6</div></div><div class="card-stat">Fees: ₹50K/yr | Median: ₹5–7 LPA</div><div class="card-verdict">Decent ROI even with modest outcomes, given ultra-low fees.</div></div>
+  </div>
+
+  <h3>🎭 5. Best Campus Life</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>College</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr class="rank-1"><td class="rank-num">1</td><td>IIT Indore</td><td>Joint fests with IIM; DJ nights; sport facilities; hostel culture is strong</td></tr>
+        <tr class="rank-2"><td class="rank-num">2</td><td>MANIT Bhopal</td><td>650-acre campus in city; large hostel; good sports; reasonable freedom</td></tr>
+        <tr class="rank-3"><td class="rank-num">3</td><td>VIT Bhopal</td><td>Good infrastructure; but isolated 70km from Bhopal — a major minus</td></tr>
+        <tr><td class="rank-num">4</td><td>IIIT Bhopal</td><td>Shares MANIT campus; decent social life; no permanent campus yet</td></tr>
+        <tr><td class="rank-num">5</td><td>JIIT Noida</td><td>Noida location helps; but campus is tiny (15 acres); attendance strict</td></tr>
+        <tr><td class="rank-num">6</td><td>IET DAVV</td><td>City college in Indore — no campus life in traditional sense, but city freedom</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>🏫 6. Best Private College (CSE/AIML) — MP + JIIT</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>College</th><th>CSE Median</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr class="rank-1"><td class="rank-num">1</td><td>JIIT Noida</td><td>₹7.93 LPA</td><td>Best outcomes, transparency, NCR location, product companies visit</td></tr>
+        <tr class="rank-2"><td class="rank-num">2</td><td>VIT Bhopal</td><td>₹5–6 LPA</td><td>VIT brand, 700+ companies, Dream offer category; but location hurts</td></tr>
+        <tr class="rank-3"><td class="rank-num">3</td><td>Medicaps Indore</td><td>₹4–4.25 LPA</td><td>Indore advantage, improving stats, best among Indore private colleges</td></tr>
+        <tr><td class="rank-num">4</td><td>Acropolis Indore</td><td>₹4–5 LPA</td><td>Indore location; slightly better startup culture</td></tr>
+        <tr><td class="rank-num">5</td><td>LNCT Bhopal</td><td>₹4–5.5 LPA</td><td>Bhopal location; large alumni; but mass-recruiter dominated</td></tr>
+        <tr><td class="rank-num">6</td><td>SISTec</td><td>₹3.5–4.5 LPA</td><td>Bhopal; newer infrastructure; limited brand</td></tr>
+        <tr><td class="rank-num">7</td><td>Shri Vaishnav/Vaishnav Vidyapeeth</td><td>₹3.5–4.5 LPA</td><td>Indore; average outcomes</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>🏛️ 7. Best Government College (CSE) — MP</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>College</th><th>Fees</th><th>Outcome</th></tr></thead>
+      <tbody>
+        <tr class="rank-1"><td class="rank-num">1</td><td>IIT Indore</td><td>₹2.2L/yr</td><td>Exceptional</td></tr>
+        <tr class="rank-2"><td class="rank-num">2</td><td>MANIT Bhopal</td><td>₹1.7L/yr</td><td>Very Good</td></tr>
+        <tr class="rank-3"><td class="rank-num">3</td><td>IIIT Bhopal</td><td>₹1.5L/yr</td><td>Good and Improving</td></tr>
+        <tr><td class="rank-num">4</td><td>IET DAVV</td><td>₹70–80K/yr</td><td>Decent + Best ROI</td></tr>
+        <tr><td class="rank-num">5</td><td>SGSITS Indore</td><td>₹70–90K/yr</td><td>Decent</td></tr>
+        <tr><td class="rank-num">6</td><td>JEC Jabalpur</td><td>₹28K/yr</td><td>Average but ultra-cheap</td></tr>
+        <tr><td class="rank-num">7</td><td>UIT RGPV</td><td>₹50K/yr</td><td>Below Average placement quality</td></tr>
+        <tr><td class="rank-num">8</td><td>MITS Gwalior</td><td>₹80K/yr</td><td>Average, Gwalior location</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>🌐 8. Best Off-Campus Opportunity</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>College</th><th>Location Advantage</th><th>Alumni Support</th></tr></thead>
+      <tbody>
+        <tr class="rank-1"><td class="rank-num">1</td><td>IIT Indore</td><td>IIT tag works everywhere</td><td>Strong IITI alumni globally</td></tr>
+        <tr class="rank-2"><td class="rank-num">2</td><td>JIIT Noida</td><td>Noida/NCR = India's IT capital</td><td>Active NCR alumni network</td></tr>
+        <tr class="rank-3"><td class="rank-num">3</td><td>MANIT Bhopal</td><td>NIT tag + Bhopal + alumni in product companies</td><td>Strong NIT Bhopal alumni chapter</td></tr>
+        <tr><td class="rank-num">4</td><td>IET DAVV / SGSITS</td><td>Indore is MP's best city for IT</td><td>Moderate alumni support</td></tr>
+        <tr><td class="rank-num">5</td><td>IIIT Bhopal</td><td>Bhopal + IIIT tag helps</td><td>Senior-driven off-campus culture</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>🎯 9. Best for Average Students</h3>
+  <div class="card-grid">
+    <div class="card"><div class="card-header"><div class="card-name">MANIT Bhopal CSE</div><div class="card-rank">1</div></div><div class="card-verdict">Even average students at MANIT CSE get ₹8–12 LPA from mass recruiters + product company shortlists. The floor is genuinely high.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">JIIT Noida CSE</div><div class="card-rank">2</div></div><div class="card-verdict">Placement cell ensures almost all eligible students get at least 1 offer. Mass recruiters as safety net.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">VIT Bhopal CSE</div><div class="card-rank">3</div></div><div class="card-verdict">Large company pool; even average students get 1 offer. But median is still only ₹5 LPA.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">IET DAVV</div><div class="card-rank">4</div></div><div class="card-verdict">With Indore location, average students can supplement weak on-campus with walk-in drives in city.</div></div>
+  </div>
+
+  <h3>🚀 10. Best for Top Coders</h3>
+  <div class="card-grid">
+    <div class="card"><div class="card-header"><div class="card-name">IIT Indore</div><div class="card-rank">1</div></div><div class="card-verdict">If you're a top coder, IIT Indore peers push you to ICPC-level. FAANG visits are real. This is the only obvious choice.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">MANIT Bhopal</div><div class="card-rank">2</div></div><div class="card-verdict">Strong coding culture; DE Shaw, Goldman, Atlassian visits. Top coders regularly get ₹30–85 LPA.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">IIIT Bhopal</div><div class="card-rank">3</div></div><div class="card-verdict">CS-focused environment. Top coders have gotten Atlassian (₹85 LPA), Cred (₹58 LPA). Small batch = more PPO chances.</div></div>
+    <div class="card"><div class="card-header"><div class="card-name">JIIT Noida</div><div class="card-rank">4</div></div><div class="card-verdict">NCR location gives top coders many off-campus options. LinkedIn, Atlassian, Microsoft visit.</div></div>
+  </div>
+</section>
+
+<!-- DEEP ANALYSIS -->
+<section id="analysis">
+  <h2><span class="num">05</span> Deep Analysis — Common Questions</h2>
+
+  <h3>Which colleges have inflated placement stats?</h3>
+  <div class="verdict-box warn">
+    <strong>🔴 Most Inflated (2025)</strong>
+    <p style="margin-top:0.5rem;color:#ffa0a0;">1. <b>LNCT Bhopal</b> — "3390 placements" includes 1500 TCS offers at ₹3.36 LPA. Claims "₹45 LPA highest" but 99% students get ₹3–6 LPA. Aggregate data across 60+ colleges in the group is presented as one institution's data.</p>
+    <p style="color:#ffa0a0;">2. <b>VIT Bhopal</b> — Claims ₹88 LPA highest (unverified) and ₹11 LPA average while NIRF median is ₹5.1 LPA. Gap between "official" and "NIRF" data is suspicious.</p>
+    <p style="color:#ffa0a0;">3. <b>Medicaps / SISTec / Technocrats</b> — "₹52 LPA highest" is 1 outlier student. The average of ₹6.5 LPA is from placed students only; ~20–30% of batch remains unplaced.</p>
+    <p style="color:#ffa0a0;">4. <b>MANIT Bhopal</b> — The CSE "average" of ₹24–26 LPA is mean-skewed by 5–8 students getting ₹50–85 LPA. Median is more like ₹12–15 LPA. Not dishonest, but misleading when advertised as "the average."</p>
+  </div>
+
+  <h3>Which colleges depend mostly on mass recruiters?</h3>
+  <div class="verdict-box warn">
+    <strong>Mass Recruiter Dependent (High % of placements from TCS/Infosys/Wipro/Accenture/Cognizant)</strong>
+    <p style="color:#ffb070;margin-top:0.5rem;">LNCT, SISTec, Technocrats, Bansal, RKDF, Truba, Patel, SAGE, Oriental, IPS Academy, Prestige, SATI, UEC, GEC Sagar, REC Rewa — <b>60–90% of placements</b> at these colleges come from mass recruiters at ₹3.36–5 LPA. Without TCS/Infosys, their placement stats would collapse.</p>
+    <p style="color:#c8c8e8;margin-top:0.5rem;">Even IET DAVV and SGSITS have a majority of students placed via mass recruiters — but their peer quality and Indore location allow motivated students to escape this trap.</p>
+  </div>
+
+  <h3>Which colleges are underrated?</h3>
+  <div class="verdict-box ok">
+    <strong>📈 Underrated Colleges</strong>
+    <p style="color:#80ffc0;margin-top:0.5rem;"><b>IIIT Bhopal</b> — Central government college, CS-focused, Atlassian/Cred/Microsoft visit, avg ₹19 LPA in 2025. JoSAA rank ~34K–46K gets you in. Most students and parents don't know this college exists. Massively undervalued.</p>
+    <p style="color:#80ffc0;"><b>IET DAVV Indore</b> — Best ROI in entire MP. ₹70K/year fees + Indore location + decent placements. No one from outside MP talks about it. Outperforms most ₹2–3 LPA/year private colleges.</p>
+    <p style="color:#80ffc0;"><b>JEC Jabalpur</b> — ₹28K/year fees. Oldest and most respected state college in MP. Alumni in government, PSU, and IT sectors. Underutilized by students who want IT careers because they don't realize off-campus potential.</p>
+  </div>
+
+  <h3>Which colleges are overrated?</h3>
+  <div class="verdict-box warn">
+    <strong>📉 Overrated Colleges</strong>
+    <p style="color:#ffa0a0;margin-top:0.5rem;"><b>LNCT Bhopal</b> — Most overhyped college in MP. Marketing budget outweighs actual student outcomes. The "brand" exists because of scale, not quality.</p>
+    <p style="color:#ffa0a0;"><b>VIT Bhopal</b> — Students confuse it with VIT Vellore. Outcomes are not comparable. The 70km isolation from Bhopal is a serious lifestyle and career disadvantage.</p>
+    <p style="color:#ffa0a0;"><b>UIT RGPV</b> — The "government college" tag gives false confidence. Placement % and quality are significantly below IET/SGSITS/JEC.</p>
+  </div>
+
+  <h3>Which colleges are improving fast?</h3>
+  <div class="verdict-box ok">
+    <strong>🚀 Improving Fast</strong>
+    <p style="color:#80ffc0;margin-top:0.5rem;"><b>IIIT Bhopal</b> — 2024 was bad (₹12 LPA avg, 60% placement) but 2025 recovered to ₹19 LPA avg and 85%+ placement. Trend is strongly upward. Permanent campus coming.</p>
+    <p style="color:#80ffc0;"><b>IIT Indore</b> — Moving up NIRF rankings every year. Recruiter quality improving. CSE batch size growing. International recognition (CERN, collaborations) improving research profile.</p>
+    <p style="color:#80ffc0;"><b>MANIT Bhopal</b> — Consistent year-on-year improvement. 2026 data shows 1567 offers, 250+ companies including Uber, Google, Microsoft, Zomato.</p>
+  </div>
+
+  <h3>Which colleges are declining or stagnant?</h3>
+  <div class="verdict-box warn">
+    <strong>📉 Declining/Stagnant</strong>
+    <p style="color:#ffa0a0;margin-top:0.5rem;"><b>Bansal / RKDF / Truba</b> — These colleges have been unable to improve median packages beyond ₹3–4 LPA despite market growth. Quality of batch is declining as stronger students prefer better options.</p>
+    <p style="color:#ffa0a0;"><b>Several MPDTE govt colleges</b> (SATI, UEC, GEC Sagar) — Facing competition from better private alternatives; infrastructure hasn't improved; placement cells remain weak.</p>
+    <p style="color:#ffa0a0;"><b>UIT RGPV</b> — While NIRF median improved on paper, student reviews consistently report only 40–50% on-campus placement in CSE. The gap between official data and ground reality is concerning.</p>
+  </div>
+
+  <h3>Best for self-study coders vs spoon-feeding</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Type</th><th>Best Colleges</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td><b>Self-Study Coders</b></td><td>IIIT Bhopal, MANIT Bhopal, IIT Indore</td><td>Freedom + strong peer group; off-campus culture thrives</td></tr>
+        <tr><td><b>Moderate Self-Drive</b></td><td>IET DAVV, JIIT Noida, SGSITS</td><td>Platform provided; personal effort amplified by location/brand</td></tr>
+        <tr><td><b>Needs Hand-holding</b></td><td>LNCT, SISTec, VIT Bhopal</td><td>Training cells, mock interviews, aptitude drives organized regularly</td></tr>
+        <tr><td><b>Spoon-feeding Heavy</b></td><td>LNCT, Technocrats, Bansal</td><td>Placement drives are structured so even weak students get something — but it's TCS/Wipro/Infosys</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Best for startup-minded students</h3>
+  <div class="verdict-box info">
+    <strong>🚀 Startup Ecosystem</strong>
+    <p style="color:#80c0ff;margin-top:0.5rem;"><b>IIT Indore</b> — Joint presence with IIM Indore creates a rare eco for product + business thinking. iHub started here.</p>
+    <p style="color:#80c0ff;"><b>MANIT Bhopal / IET DAVV</b> — Both in Bhopal/Indore — MP's two startup cities. City exposure helps independent startup thinking.</p>
+    <p style="color:#80c0ff;"><b>JIIT Noida</b> — NCR has India's densest startup density. Being at a decent college in Noida with good skills = access to intern at 100s of startups.</p>
+  </div>
+</section>
+
+<!-- Q&A -->
+<section id="qa">
+  <h2><span class="num">06</span> Direct Q&A</h2>
+
+  <div class="qa-item">
+    <div class="qa-q">Is JIIT Noida better than lower NITs/IIITs for CSE/AIML?</div>
+    <div class="qa-a">
+      <b>Vs Lower NITs (NIT Manipur, NIT Mizoram, NIT Arunachal):</b> Yes, JIIT CSE in NCR likely gives better industry outcomes than the bottom 5–6 NITs in terms of actual job quality and packages, though NITs have better government job options (PSU/GATE pathway) and a cheaper degree.<br><br>
+      <b>Vs IIIT Bhopal (at ~40K JoSAA rank):</b> No. IIIT Bhopal has better CSE-specific outcomes (₹19–20 LPA avg vs JIIT ₹11 LPA avg), government institution benefits, and massively better ROI (₹1.5 LPA vs ₹3.5 LPA fees). If you can get IIIT Bhopal, it's strictly better than JIIT Noida for CSE.<br><br>
+      <b>Vs Mid NITs (NIT Kurukshetra, NIT Jalandpur CSE):</b> Comparable. JIIT is in NCR which helps for placements. But NIT brand has more PSU/government job access and lower fees.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Is LNCT actually good or overhyped?</div>
+    <div class="qa-a">
+      <b>Brutally honest: Overhyped.</b> LNCT is the McDonald's of engineering education in MP — massive scale, consistent (mediocre) output, and strong marketing. The NIRF median of ₹5.5 LPA, the TCS-1500-offer reality, and student reviews saying "average is 5–6 LPA" confirm this. The "₹45 LPA Intuit" or "₹82 LPA" claims are for 1–2 students out of 3000+. If your goal is a strong CSE career, LNCT offers the "floor" of employment — which for motivated students is actually a waste of 4 years of potential, because the peer group is not strong enough to push you. Choose IET DAVV/JEC/UIT RGPV over LNCT for CSE if you have government options.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Is Medicaps or Acropolis better for CSE?</div>
+    <div class="qa-a">
+      They are very close. <b>Medicaps slightly edges out Acropolis</b> in terms of placement numbers, company diversity, and infrastructure. Both benefit from the Indore location. Medicaps has a higher average claiming ₹6.5 LPA vs Acropolis ~₹4–6 LPA. However, both have a realistic median of ₹4–5 LPA for average students. If you're a motivated self-learner, either works — the Indore city location matters more than the specific college at this tier. If you're choosing between these two and IET DAVV is an option, always choose IET DAVV — it's strictly better at much lower cost.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Is UIT RGPV underrated?</div>
+    <div class="qa-a">
+      <b>No.</b> Despite being a government college, UIT RGPV consistently underperforms on actual CSE placement metrics. Student reviews report only 40% on-campus placement in CSE. The academic culture (using Shivani/Raj series books) is not conducive to building strong engineering skills. The NIRF median of ₹7.1 LPA for "all UG students" includes programs other than CS. For CSE specifically, the on-campus reality is weaker. It's a decent option ONLY if you cannot get into IET DAVV/SGSITS/JEC and you're planning to self-prepare for off-campus or GATE.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Which MP private college is actually the best for CSE?</div>
+    <div class="qa-a">
+      <b>VIT Bhopal</b> edges out all other MP private colleges purely on placement data and brand recognition — BUT its 70km isolated location from Bhopal is a serious practical disadvantage. <b>JIIT Noida</b> (technically not MP but included here) is strictly better than any MP private college for CSE outcomes. Among truly-in-MP private colleges: <b>VIT Bhopal → Medicaps → Acropolis → LNCT</b> is the ranking. However, every MP private college is worse than IET DAVV/SGSITS for CSE, which are government options available at much lower cost.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Which college gives best outcome at ~1.4 lakh JEE Main rank?</div>
+    <div class="qa-a">
+      At ~1.4 lakh JEE Main rank, here's the priority order for CSE/AIML:<br><br>
+      <b>1. IIIT Bhopal</b> (JoSAA rank ~34K–46K for CSE) — May be reachable in later rounds. Central govt, CS-focused, avg ₹19 LPA. First priority.<br>
+      <b>2. MANIT Bhopal</b> (CSE closing rank ~15K–22K general) — Probably out of reach at 1.4L, but check SC/OBC/state quota rounds.<br>
+      <b>3. IET DAVV / SGSITS Indore</b> — Through DTE MP counselling. Best government options for this rank range.<br>
+      <b>4. JEC Jabalpur</b> — Through DTE MP counselling. Ultra-low fees.<br>
+      <b>5. UIT RGPV</b> — Government, Bhopal. Acceptable as safety option.<br>
+      <b>6. JIIT Noida Sec-128</b> — Private, ₹3.5–4 LPA fees, but NCR advantage. Reasonable if government options are not available.<br>
+      <b>7. VIT Bhopal</b> — Private, consider if no government options.<br>
+      <b>Avoid unless no other choice:</b> LNCT, Medicaps, SISTec, Bansal, RKDF at this rank if government CSE seats are available.
+    </div>
+  </div>
+</section>
+
+<!-- FINAL VERDICT -->
+<section id="verdict">
+  <div class="final-verdict">
+    <h2>⚡ Final Brutal Verdict — High Package in CSE/AIML: Who's Worth It?</h2>
+
+    <div class="verdict-box ok">
+      <strong>✅ DEFINITELY WORTH IT</strong>
+      <p><b>IIT Indore CSE</b> — No debate. If you can get in (rank ~1100–1800), this is your destination. Any sacrifice is worth it.</p>
+      <p><b>MANIT Bhopal CSE</b> — If you're at ~15K–22K rank, grab this. Government fees, NIT brand, actual FAANG-adjacent companies. The median of ₹12–15 LPA is genuine and the ceiling is ₹85 LPA for strong coders.</p>
+      <p><b>IIIT Bhopal CSE/IT</b> — At ~34K–46K JoSAA rank, this is a steal. CS-only focus, central govt, improving trajectory. Better than most NITs at similar ranks for pure IT outcomes.</p>
+    </div>
+
+    <div class="verdict-box info">
+      <strong>✅ WORTH IT IF NO BETTER GOVT OPTION</strong>
+      <p><b>IET DAVV Indore CSE</b> — For DTE MP rank holders, this is the best choice in state. Fees are ₹70K/year. Outcomes beat all private colleges in MP. Do not ignore this for flashy private colleges.</p>
+      <p><b>SGSITS Indore CSE</b> — Similar to IET DAVV. Both are the "real deal" for state govt colleges in Indore.</p>
+      <p><b>JIIT Noida CSE</b> — If your rank (~45K–75K JEE Main for CSE) doesn't yield a government seat and you're in the NCR region, JIIT is the right choice among private options. Median ₹7.93 LPA is honest. NCR off-campus opportunities compensate for the fees.</p>
+    </div>
+
+    <div class="verdict-box">
+      <strong>⚠️ ACCEPTABLE WITH CAVEATS</strong>
+      <p><b>JEC Jabalpur, UIT RGPV</b> — Good ROI due to very low fees, but on-campus placement quality is limited. Self-prep is mandatory. Ideal for students targeting GATE/PSU or who will self-build their way to off-campus opportunities.</p>
+      <p><b>VIT Bhopal CSE</b> — Acceptable private option for Bhopal students, but the 70km isolation is a real problem. High fees for a NIRF median of ₹5.1 LPA. Only choose if no government options available.</p>
+    </div>
+
+    <div class="verdict-box warn">
+      <strong>❌ NOT WORTH THE FEES FOR CSE GOAL</strong>
+      <p><b>LNCT, Medicaps, Acropolis, SISTec, IPS Academy</b> — If government college seats in IET DAVV / SGSITS / JEC / UIT RGPV are available to you, there is no financial case for these private colleges at their fee levels (₹1.5–2 LPA/year). Their CSE median outcomes (₹4–5.5 LPA) are achievable or beatable from government colleges at 1/5th to 1/10th the cost.</p>
+      <p><b>Bansal, RKDF, Truba, Patel, GEC Sagar, REC Rewa</b> — Strictly for students with no other option. The brand provides little to no advantage in the job market. Self-reliance and off-campus preparation are the only paths to good outcomes from these colleges.</p>
+    </div>
+
+    <div style="margin-top:2rem;padding:1.5rem;background:rgba(232,255,74,0.05);border-radius:8px;border:1px solid rgba(232,255,74,0.2);">
+      <h3 style="color:var(--accent);margin-bottom:1rem;font-family:'Syne',sans-serif;">📌 The Bottom Line</h3>
+      <p style="color:#d0d0e8;font-size:0.88rem;line-height:1.8;">In MP's engineering landscape, <b>the gap between tier-1 govt and tier-3+ private is enormous</b>. IIT Indore CSE median (₹28–32 LPA) vs LNCT CSE median (₹4–5.5 LPA) is a 6x difference for students likely paying similar real-money costs over 4 years (government loans + living expenses). The brand value, peer group quality, and employer access differences are permanent career advantages.
+      <br><br>
+      <b>If you are a motivated coder</b> at any college in this list — including tier-4 private colleges — you can achieve good outcomes through FAANG-level off-campus prep. But your probability of success is dramatically higher at MANIT/IIIT Bhopal/IIT Indore because your <i>peers</i>, <i>seniors</i>, and <i>direct campus opportunities</i> will do 50% of the work for you. At LNCT or Medicaps, 100% of the heavy lifting is on you with no institutional tailwind.
+      <br><br>
+      <b>The single most important advice:</b> At any reasonable JEE Main rank (up to 2 lakh), prioritize government colleges in MP (especially IET DAVV, JEC, UIT RGPV) over private colleges costing more. Save the ₹6–8 lakh in fees difference, use it to fund 1 year of a top-tier online upskilling program or a master's degree. The ROI arithmetic strongly favors government engineering education in MP at every rank range.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Compiled from NIRF 2025, official placement reports, Careers360, Shiksha, CollegeDunia, Quora, Reddit community data &amp; student reviews · May 2026<br>
+  Data is for CSE/AIML branches only unless stated. All packages are CTC, not in-hand. "Average" = mean of placed students; not total batch average.
+</footer>
+
+</body>
+</html>
